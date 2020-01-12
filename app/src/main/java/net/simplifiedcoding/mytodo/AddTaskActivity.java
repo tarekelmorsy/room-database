@@ -6,20 +6,36 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import net.simplifiedcoding.mytodo.time.Time;
+
 public class AddTaskActivity extends AppCompatActivity {
 
-    private EditText editTextTask, editTextDesc, editTextFinishBy;
+    private EditText  editTextDesc, editTextFinishBy;
+    public static EditText TASK ;
     private DatePicker dateNewTask;
+    Button time ;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_task);
 
+
+        time = findViewById(R.id.button_time);
+        time.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AddTaskActivity.this, Time.class);
+                startActivity(intent);
+
+            }
+        });
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("  My ToDo List  ");
 
@@ -27,7 +43,7 @@ public class AddTaskActivity extends AppCompatActivity {
         actionBar.setDisplayUseLogoEnabled(true);
         actionBar.setDisplayShowHomeEnabled(true);
 
-        editTextTask = findViewById(R.id.editTextTask);
+        TASK = findViewById(R.id.editTextTask);
         editTextDesc = findViewById(R.id.editTextDesc);
         editTextFinishBy = findViewById(R.id.editTextFinishBy);
         dateNewTask = findViewById(R.id.datePicker1);
@@ -41,15 +57,15 @@ public class AddTaskActivity extends AppCompatActivity {
     }
 
     private void saveTask() {
-        final String sTask = editTextTask.getText().toString().trim();
+        final String sTask = TASK.getText().toString().trim();
         final String sDesc = editTextDesc.getText().toString().trim();
         editTextFinishBy.setText(" "+ dateNewTask.getDayOfMonth()+ "/" + (dateNewTask.getMonth() + 1) + "/" + dateNewTask.getYear());
         final String sFinishBy = editTextFinishBy.getText().toString().trim();
 
 
         if (sTask.isEmpty()) {
-            editTextTask.setError("Task required");
-            editTextTask.requestFocus();
+            TASK.setError("Task required");
+            TASK.requestFocus();
             return;
         }
 

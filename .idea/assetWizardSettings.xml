@@ -145,7 +145,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/snap/android-studio/81/android-studio/plugins/android/lib/android.jar!/images/material_design_icons/action/ic_list_black_24dp.xml" />
+                                      <entry key="url" value="jar:file:/snap/android-studio/81/android-studio/plugins/android/lib/android.jar!/images/material_design_icons/action/ic_settings_black_24dp.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -155,7 +155,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="list" />
+                            <entry key="color" value="ffffff" />
+                            <entry key="outputName" value="setting" />
                             <entry key="sourceFile" value="$PROJECT_DIR$/.." />
                           </map>
                         </option>

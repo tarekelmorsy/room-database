@@ -7,20 +7,23 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import net.simplifiedcoding.mytodo.time.Time;
 
 public class UpdateTaskActivity extends AppCompatActivity {
 
     private EditText editTextTask, editTextDesc, editTextFinishBy;
     private CheckBox checkBoxFinished;
-
-
+    private Button updateTime;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_task);
+
 
 
         editTextTask = findViewById(R.id.editTextTask);
